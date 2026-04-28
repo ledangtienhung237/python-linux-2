@@ -15,7 +15,8 @@ def process(directoryName):
             fig = plt.figure() 
             ax1 = fig.add_subplot(221)
             imshow(img_new)
-            plt.title('Grayscale Format') 
+            plt.title('Grayscale Format')
+            os.makedirs(os.getcwd() + "/output", exist_ok=True)  # ← THÊM DÒNG NÀY
             imsave(os.getcwd() + "/output/" + filenamestr +"-" + helper.generateRandomName() + "_modified.jpeg", (img_new*255).astype(np.uint8))
         else:
             continue
