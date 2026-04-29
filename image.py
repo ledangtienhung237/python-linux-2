@@ -18,5 +18,6 @@ def process(directoryName):
             plt.title('Grayscale Format')
             os.makedirs(os.getcwd() + "/output", exist_ok=True)  # ← THÊM DÒNG NÀY
             imsave(os.getcwd() + "/output/" + filenamestr +"-" + helper.generateRandomName() + "_modified.jpeg", (img_new*255).astype(np.uint8))
+            plt.close(fig)
         else:
             continue
